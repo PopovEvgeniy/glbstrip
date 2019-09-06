@@ -1,0 +1,73 @@
+object Form1: TForm1
+  Left = 254
+  Height = 178
+  Top = 155
+  Width = 331
+  Caption = 'Form1'
+  ClientHeight = 178
+  ClientWidth = 331
+  OnCreate = FormCreate
+  LCLVersion = '2.0.4.0'
+  object LabeledEdit1: TLabeledEdit
+    Left = 80
+    Height = 23
+    Top = 24
+    Width = 144
+    EditLabel.Height = 15
+    EditLabel.Width = 144
+    EditLabel.Caption = 'File'
+    EditLabel.ParentColor = False
+    TabOrder = 0
+    Text = 'LabeledEdit1'
+    OnChange = LabeledEdit1Change
+  end
+  object LabeledEdit2: TLabeledEdit
+    Left = 80
+    Height = 23
+    Top = 72
+    Width = 144
+    EditLabel.Height = 15
+    EditLabel.Width = 144
+    EditLabel.Caption = 'Directory'
+    EditLabel.ParentColor = False
+    TabOrder = 1
+    Text = 'LabeledEdit2'
+    OnChange = LabeledEdit2Change
+  end
+  object Button1: TButton
+    Left = 232
+    Height = 25
+    Top = 24
+    Width = 88
+    Caption = 'Open'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+  object Button2: TButton
+    Left = 232
+    Height = 25
+    Top = 72
+    Width = 88
+    Caption = 'Select'
+    OnClick = Button2Click
+    TabOrder = 3
+  end
+  object Button3: TButton
+    Left = 96
+    Height = 25
+    Top = 112
+    Width = 112
+    Caption = 'Extract'
+    OnClick = Button3Click
+    TabOrder = 4
+  end
+  object OpenDialog1: TOpenDialog
+    left = 40
+    top = 112
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    Options = [ofOldStyleDialog, ofEnableSizing, ofViewDetail]
+    left = 256
+    top = 112
+  end
+end
