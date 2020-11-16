@@ -19,7 +19,7 @@
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="64\demonatorshell"/>
+            <Filename Value="demonatorshell64"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -75,14 +75,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="83"/>
-        <CursorPos X="24" Y="45"/>
+        <TopLine Value="162"/>
+        <CursorPos X="2" Y="54"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="2" HistoryIndex="1">
+    <JumpHistory Count="4" HistoryIndex="3">
       <Position1>
         <Filename Value="demonatorshellcode.pas"/>
         <Caret Line="123" Column="58" TopLine="75"/>
@@ -91,13 +91,21 @@
         <Filename Value="demonatorshellcode.pas"/>
         <Caret Line="122" Column="58" TopLine="106"/>
       </Position2>
+      <Position3>
+        <Filename Value="demonatorshellcode.pas"/>
+        <Caret Line="175" Column="70" TopLine="162"/>
+      </Position3>
+      <Position4>
+        <Filename Value="demonatorshellcode.pas"/>
+        <Caret Line="186" Column="135" TopLine="170"/>
+      </Position4>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="32\demonatorshell"/>
+      <Filename Value="demonatorshell"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
