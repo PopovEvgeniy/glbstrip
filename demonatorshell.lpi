@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="11"/>
+    <Version Value="12"/>
     <PathDelim Value="\"/>
     <General>
-      <MainUnit Value="0"/>
+      <Flags>
+        <CompatibilityMode Value="True"/>
+      </Flags>
       <Title Value="demonatorshell"/>
       <ResourceType Value="res"/>
       <Icon Value="0"/>
@@ -48,6 +50,7 @@
         </CompilerOptions>
       </Item2>
     </BuildModes>
+    <ManyBuildModesSelection Value="&quot;Windows 32 bit&quot;,&quot;Windows 64 bit&quot;"/>
     <PublishOptions>
       <Version Value="2"/>
     </PublishOptions>
@@ -75,8 +78,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="73"/>
-        <CursorPos X="39" Y="83"/>
+        <TopLine Value="64"/>
+        <CursorPos Y="39"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>

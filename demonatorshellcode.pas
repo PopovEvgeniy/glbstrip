@@ -36,16 +36,7 @@ type
   end; 
 
 var Form1: TForm1;
-function get_path(): string;
-function convert_file_name(source:string): string;
-function execute_program(executable:string;argument:string):Integer;
-procedure window_setup();
-procedure dialog_setup();
-procedure interface_setup();
-procedure common_setup();
-procedure language_setup();
-procedure setup();
-procedure decompile_glb(target:string;directory:string);
+
 
 implementation
 
@@ -72,7 +63,7 @@ begin
  try
   code:=ExecuteProcess(executable,argument,[]);
  except
-  On EOSError do code:=-1;
+  code:=-1;
  end;
  execute_program:=code;
 end;
@@ -80,7 +71,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='DEMONATOR SHELL';
- Form1.Caption:='DEMONATOR SHELL 0.3.1';
+ Form1.Caption:='DEMONATOR SHELL 0.3.2';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
