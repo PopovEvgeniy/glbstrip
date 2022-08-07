@@ -1,13 +1,13 @@
                                 DEMONATOR SHELL
 
-                                  Version 0.3.2
+                                  Version 0.3.2.1
 
                          This software by Popov Evgeniy Alekseyevich
 
 System requirement
 
-Windows 2000 or higher for 32 bit system
-Windows Vista or higher for 64 bit system
+Windows 2000 or higher for 32-bit system
+Windows Vista or higher for 64-bit system
 
 Program description
 
@@ -33,3 +33,4 @@ Change log
 0.2 - 0.3 - Small changes.
 0.3.1 - Small bug fixed.
 0.3.2 - Small changes.
+0.3.2.1 - Documentation updated.
