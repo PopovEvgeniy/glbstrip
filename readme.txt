@@ -1,6 +1,6 @@
                                 DEMONATOR SHELL
 
-                                  Version 0.3.2.1
+                                  Version 0.3.3
 
                          This software by Popov Evgeniy Alekseyevich
 
@@ -12,7 +12,7 @@ Windows Vista or higher for 64-bit system
 Program description
 
 This program is a graphic shell for DEMONATOR.
-Put executable file of DEMONATOR to DEMONATOR SHELL directory before first start.
+Put the executable file of DEMONATOR to DEMONATOR SHELL directory before first start.
 
 License
 
@@ -34,3 +34,4 @@ Change log
 0.3.1 - Small bug fixed.
 0.3.2 - Small changes.
 0.3.2.1 - Documentation updated.
+0.3.3 - Small changes.
