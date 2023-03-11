@@ -1,6 +1,6 @@
-                                DEMONATOR SHELL
+                                   GLB Strip
 
-                                  Version 0.3.3
+                                  Version 0.3.7
 
                          This software by Popov Evgeniy Alekseyevich
 
@@ -11,8 +11,8 @@ Windows Vista or higher for 64-bit system
 
 Program description
 
-This program is a graphic shell for DEMONATOR.
-Put the executable file of DEMONATOR to DEMONATOR SHELL directory before first start.
+This program is a graphic shell for Demonator and Galactix fuse.
+Put the executable files of these tools to GLB Strip directory before first start.
 
 License
 
@@ -25,7 +25,7 @@ You can send me a letter to tuzik87@inbox.ru
 About program modification
 
 Source code included in source.zip archive.
-It can be compiled under Lazarus 2.2.2 or higher.
+It can be compiled under Lazarus 2.2.6 or higher.
 
 Change log
 
@@ -35,3 +35,7 @@ Change log
 0.3.2 - Small changes.
 0.3.2.1 - Documentation updated.
 0.3.3 - Small changes.
+0.3.4 - Project name changed.
+0.3.5 - User interface improved.
+0.3.6 - Galactix fuse support added.
+0.3.7 - Small changes.

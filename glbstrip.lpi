@@ -7,7 +7,7 @@
       <Flags>
         <CompatibilityMode Value="True"/>
       </Flags>
-      <Title Value="demonatorshell"/>
+      <Title Value="glbstrip"/>
       <ResourceType Value="res"/>
       <Icon Value="0"/>
     </General>
@@ -21,7 +21,7 @@
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="demonatorshell64"/>
+            <Filename Value="glbstrip64"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -67,48 +67,44 @@
     </RequiredPackages>
     <Units Count="2">
       <Unit0>
-        <Filename Value="demonatorshell.lpr"/>
+        <Filename Value="glbstrip.lpr"/>
         <IsPartOfProject Value="True"/>
         <UsageCount Value="21"/>
       </Unit0>
       <Unit1>
-        <Filename Value="demonatorshellcode.pas"/>
+        <Filename Value="glbstripcode.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="64"/>
-        <CursorPos X="2" Y="114"/>
+        <TopLine Value="176"/>
+        <CursorPos Y="42"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="4" HistoryIndex="3">
+    <JumpHistory Count="3" HistoryIndex="2">
       <Position1>
-        <Filename Value="demonatorshellcode.pas"/>
-        <Caret Line="123" Column="58" TopLine="75"/>
+        <Filename Value="glbstripcode.pas"/>
+        <Caret Line="73" Column="31" TopLine="64"/>
       </Position1>
       <Position2>
-        <Filename Value="demonatorshellcode.pas"/>
-        <Caret Line="122" Column="58" TopLine="106"/>
+        <Filename Value="glbstripcode.pas"/>
+        <Caret Line="74" Column="31" TopLine="65"/>
       </Position2>
       <Position3>
-        <Filename Value="demonatorshellcode.pas"/>
-        <Caret Line="175" Column="70" TopLine="162"/>
+        <Filename Value="glbstripcode.pas"/>
+        <Caret Line="75" Column="31" TopLine="66"/>
       </Position3>
-      <Position4>
-        <Filename Value="demonatorshellcode.pas"/>
-        <Caret Line="186" Column="135" TopLine="170"/>
-      </Position4>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="demonatorshell"/>
+      <Filename Value="glbstrip"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>

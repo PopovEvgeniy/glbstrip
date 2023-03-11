@@ -1,4 +1,4 @@
-program demonatorshell;
+program glbstrip;
 
 {$mode objfpc}{$H+}
 
@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, demonatorshellcode
+  Forms, glbstripcode
   { you can add units after this };
 
 {$R *.res}

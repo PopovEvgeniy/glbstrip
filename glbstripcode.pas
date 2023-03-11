@@ -1,4 +1,4 @@
-unit demonatorshellcode;
+unit glbstripcode;
 
 {$mode objfpc}{$H+}
 
@@ -16,9 +16,12 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    Label1: TLabel;
     LabeledEdit1: TLabeledEdit;
     LabeledEdit2: TLabeledEdit;
     OpenDialog1: TOpenDialog;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
     SelectDirectoryDialog1: TSelectDirectoryDialog;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -37,13 +40,7 @@ type
 
 var Form1: TForm1;
 
-
 implementation
-
-function get_path(): string;
-begin
- get_path:=ExtractFilePath(Application.ExeName);
-end;
 
 function convert_file_name(source:string): string;
 var target:string;
@@ -51,8 +48,7 @@ begin
  target:=source;
  if Pos(' ',source)>0 then
  begin
-  target:='"';
-  target:=target+source+'"';
+  target:='"'+source+'"';
  end;
  convert_file_name:=target;
 end;
@@ -68,10 +64,21 @@ begin
  execute_program:=code;
 end;
 
+function get_backend():string;
+var backend:string;
+begin
+ backend:=ExtractFilePath(Application.ExeName)+'demonator';
+ if Form1.RadioButton2.Checked=True then
+ begin
+  backend:=ExtractFilePath(Application.ExeName)+'galactixfuse';
+ end;
+ get_backend:=backend;
+end;
+
 procedure window_setup();
 begin
- Application.Title:='DEMONATOR SHELL';
- Form1.Caption:='DEMONATOR SHELL 0.3.3';
+ Application.Title:='GLB Strip';
+ Form1.Caption:='GLB Strip 0.3.7';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -81,7 +88,7 @@ procedure dialog_setup();
 begin
  Form1.OpenDialog1.FileName:='*.glb';
  Form1.OpenDialog1.DefaultExt:='*.glb';
- Form1.OpenDialog1.Filter:='DemonStar pseudo-archive|*.glb';
+ Form1.OpenDialog1.Filter:='GLB pseudo-archive|*.glb';
 end;
 
 procedure interface_setup();
@@ -90,6 +97,7 @@ begin
  Form1.Button2.ShowHint:=Form1.Button1.ShowHint;
  Form1.Button3.ShowHint:=Form1.Button1.ShowHint;
  Form1.Button3.Enabled:=False;
+ Form1.RadioButton1.Checked:=True;
  Form1.LabeledEdit1.Text:='';
  Form1.LabeledEdit2.Text:=Form1.LabeledEdit1.Text;
  Form1.LabeledEdit1.LabelPosition:=lpLeft;
@@ -102,6 +110,9 @@ procedure language_setup();
 begin
  Form1.LabeledEdit1.EditLabel.Caption:='File';
  Form1.LabeledEdit2.EditLabel.Caption:='Directory';
+ Form1.Label1.Caption:='Tool';
+ Form1.RadioButton1.Caption:='Demonator';
+ Form1.RadioButton2.Caption:='Galactix fuse';
  Form1.Button1.Caption:='Open';
  Form1.Button2.Caption:='Browse';
  Form1.Button3.Caption:='Extract';
@@ -118,14 +129,13 @@ begin
 end;
 
 procedure decompile_glb(target:string;directory:string);
-var host,argument,message:string;
+var argument,message:string;
 var messages:array[0..5] of string=('Operation successfully complete','Cant open input file','Cant create output file','Cant jump to target offset','Cant allocate memory','Invalid format');
 var status:Integer;
 begin
- message:='Can not execute a external program';
- host:=get_path()+'demonator';
+ message:='Can not execute an external program';
  argument:=convert_file_name(target)+' '+convert_file_name(directory);
- status:=execute_program(host,argument);
+ status:=execute_program(get_backend(),argument);
  if status<>-1 then
  begin
   message:=messages[status];
