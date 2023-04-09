@@ -5,8 +5,8 @@ unit glbstripcode;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Dialogs,
-  ExtCtrls, StdCtrls, ComCtrls;
+  Classes, SysUtils, Forms, Controls, Dialogs,
+  ExtCtrls, StdCtrls, ComCtrls, LazFileUtils;
 
 type
 
@@ -42,7 +42,7 @@ var Form1: TForm1;
 
 implementation
 
-function convert_file_name(source:string): string;
+function convert_file_name(const source:string): string;
 var target:string;
 begin
  target:=source;
@@ -53,7 +53,7 @@ begin
  convert_file_name:=target;
 end;
 
-function execute_program(executable:string;argument:string):Integer;
+function execute_program(const executable:string;const argument:string):Integer;
 var code:Integer;
 begin
  try
@@ -75,10 +75,25 @@ begin
  get_backend:=backend;
 end;
 
+procedure decompile_glb(const target:string;const directory:string);
+var argument,message:string;
+var messages:array[0..5] of string=('Operation successfully complete','Cant open input file','Cant create output file','Cant jump to target offset','Cant allocate memory','Invalid format');
+var status:Integer;
+begin
+ message:='Can not execute an external program';
+ argument:=convert_file_name(target)+' '+convert_file_name(directory);
+ status:=execute_program(get_backend(),argument);
+ if status<>-1 then
+ begin
+  message:=messages[status];
+ end;
+ ShowMessage(message);
+end;
+
 procedure window_setup();
 begin
  Application.Title:='GLB Strip';
- Form1.Caption:='GLB Strip 0.3.7';
+ Form1.Caption:='GLB Strip 0.3.8';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -126,21 +141,6 @@ begin
  interface_setup();
  dialog_setup();
  language_setup();
-end;
-
-procedure decompile_glb(target:string;directory:string);
-var argument,message:string;
-var messages:array[0..5] of string=('Operation successfully complete','Cant open input file','Cant create output file','Cant jump to target offset','Cant allocate memory','Invalid format');
-var status:Integer;
-begin
- message:='Can not execute an external program';
- argument:=convert_file_name(target)+' '+convert_file_name(directory);
- status:=execute_program(get_backend(),argument);
- if status<>-1 then
- begin
-  message:=messages[status];
- end;
- ShowMessage(message);
 end;
 
 { TForm1 }
