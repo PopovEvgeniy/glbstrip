@@ -50,6 +50,17 @@ begin
  convert_file_name:=target;
 end;
 
+function correct_path(const source:string ): string;
+var target:string;
+begin
+ target:=source;
+ if source[Length(source)]<>DirectorySeparator then
+ begin
+  target:=source+DirectorySeparator;
+ end;
+ correct_path:=target;
+end;
+
 function execute_program(const executable:string;const argument:string):Integer;
 var code:Integer;
 begin
@@ -64,10 +75,10 @@ end;
 function get_backend():string;
 var backend:string;
 begin
- backend:=ExtractFilePath(Application.ExeName)+'demonator';
+ backend:=ExtractFilePath(Application.ExeName)+'demonator.exe';
  if Form1.RadioButton2.Checked=True then
  begin
-  backend:=ExtractFilePath(Application.ExeName)+'galactixfuse';
+  backend:=ExtractFilePath(Application.ExeName)+'galactixfuse.exe';
  end;
  get_backend:=backend;
 end;
@@ -90,7 +101,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='GLB Strip';
- Form1.Caption:='GLB Strip 0.4';
+ Form1.Caption:='GLB Strip 0.4.1';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -172,7 +183,7 @@ procedure TForm1.Button2Click(Sender: TObject);
 begin
  if Form1.SelectDirectoryDialog1.Execute()=True then
  begin
-  Form1.LabeledEdit2.Text:=Form1.SelectDirectoryDialog1.FileName;
+  Form1.LabeledEdit2.Text:=correct_path(Form1.SelectDirectoryDialog1.FileName);
  end;
 
 end;
