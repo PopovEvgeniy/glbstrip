@@ -1,6 +1,6 @@
                                    GLB Strip
 
-                                  Version 0.4.1
+                                  Version 0.4.2
 
                          This software by Popov Evgeniy Alekseyevich
 
@@ -42,3 +42,4 @@ Change log
 0.3.9 - Small bug fixed.
 0.4 - Small changes.
 0.4.1 - Small bug fixed.
+0.4.2 - Small changes.

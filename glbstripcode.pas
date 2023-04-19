@@ -54,7 +54,7 @@ function correct_path(const source:string ): string;
 var target:string;
 begin
  target:=source;
- if source[Length(source)]<>DirectorySeparator then
+ if LastDelimiter(DirectorySeparator,source)<>Length(source) then
  begin
   target:=source+DirectorySeparator;
  end;
@@ -101,7 +101,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='GLB Strip';
- Form1.Caption:='GLB Strip 0.4.1';
+ Form1.Caption:='GLB Strip 0.4.2';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -109,7 +109,6 @@ end;
 
 procedure dialog_setup();
 begin
- Form1.SelectDirectoryDialog1.Options:=[ofOldStyleDialog,ofEnableSizing,ofViewDetail,ofCreatePrompt];
  Form1.OpenDialog1.FileName:='*.glb';
  Form1.OpenDialog1.DefaultExt:='*.glb';
  Form1.OpenDialog1.Filter:='GLB pseudo-archive|*.glb';
