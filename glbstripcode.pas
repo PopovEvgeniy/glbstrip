@@ -85,7 +85,7 @@ end;
 
 procedure decompile_glb(const target:string;const directory:string);
 var argument,message:string;
-var messages:array[0..5] of string=('Operation successfully complete','Cant open input file','Cant create output file','Cant jump to target offset','Cant allocate memory','Invalid format');
+var messages:array[0..5] of string=('Operation was successfully complete','Cant open the input file','Cant create the output file','Cant jump to the target offset','Cant allocate memory','Invalid format');
 var status:Integer;
 begin
  message:='Can not execute an external program';
@@ -101,7 +101,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='GLB Strip';
- Form1.Caption:='GLB Strip 0.4.2';
+ Form1.Caption:='GLB Strip 0.4.3';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -139,7 +139,7 @@ begin
  Form1.Button1.Caption:='Open';
  Form1.Button2.Caption:='Browse';
  Form1.Button3.Caption:='Extract';
- Form1.OpenDialog1.Title:='Open existing file';
+ Form1.OpenDialog1.Title:='Open the existing file';
  Form1.SelectDirectoryDialog1.Title:='Select a directory';
 end;
 
