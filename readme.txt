@@ -1,6 +1,6 @@
                                    GLB Strip
 
-                                  Version 0.4.3
+                                  Version 0.4.3.1
 
                          This software was made by Popov Evgeniy Alekseyevich
 
@@ -12,7 +12,7 @@ Windows Vista or higher for 64-bit systems
 Program description
 
 This program is a graphic shell for Demonator and Galactix fuse.
-Put the executable files of these tools in the GLB Strip directory before the first start.
+Put the executable files of these tools to the GLB Strip directory before the first start.
 
 License
 
@@ -29,19 +29,20 @@ It can be compiled under Lazarus 3.4 or higher.
 
 Change log
 
-0.1 – Initial version.
-0.2 – 0.3 – Small changes.
-0.3.1 – Small bug fixed.
-0.3.2 – Small changes.
-0.3.2.1 – Documentation updated.
-0.3.3 – Small changes.
-0.3.4 – Project name changed.
-0.3.5 – User interface improved.
-0.3.6 – Galactix fuse support has been added.
-0.3.7 – 0.3.8 – Small changes.
-0.3.9 – Small bug fixed.
-0.4 – Small changes.
-0.4.1 – Small bug fixed.
-0.4.2 – Small changes.
-0.4.2.1 – Documentation updated.
-0.4.3 – Small changes.
+0.1: Initial version.
+0.2-0.3: The small changes.
+0.3.1: The small bug is fixed.
+0.3.2: The small changes.
+0.3.2.1: Documentation updated.
+0.3.3: The small changes.
+0.3.4: The project name changed.
+0.3.5: The user interface improved.
+0.3.6: Galactix fuse support has been added.
+0.3.7-0.3.8: The small changes.
+0.3.9: The small bug is fixed.
+0.4: The small changes.
+0.4.1: The small bug is fixed.
+0.4.2: The small changes.
+0.4.2.1: Documentation updated.
+0.4.3: The small changes.
+0.4.3.1: Documentation updated.
