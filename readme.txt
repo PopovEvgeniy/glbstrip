@@ -1,6 +1,6 @@
                                    GLB Strip
 
-                                  Version 0.4.3.1
+                                  Version 0.4.3.2
 
                          This software was made by Popov Evgeniy Alekseyevich
 
@@ -31,18 +31,18 @@ Change log
 
 0.1: Initial version.
 0.2-0.3: The small changes.
-0.3.1: The small bug is fixed.
+0.3.1: The small bug has been fixed.
 0.3.2: The small changes.
-0.3.2.1: Documentation updated.
+0.3.2.1: The documentation has been updated.
 0.3.3: The small changes.
-0.3.4: The project name changed.
-0.3.5: The user interface improved.
+0.3.4: The project name has changed.
+0.3.5: The user interface has improved.
 0.3.6: Galactix fuse support has been added.
 0.3.7-0.3.8: The small changes.
-0.3.9: The small bug is fixed.
+0.3.9: The small bug has been fixed.
 0.4: The small changes.
-0.4.1: The small bug is fixed.
+0.4.1: The small bug has been fixed.
 0.4.2: The small changes.
-0.4.2.1: Documentation updated.
+0.4.2.1: The documentation has been updated.
 0.4.3: The small changes.
-0.4.3.1: Documentation updated.
+0.4.3.1-0.4.3.2: The documentation has been updated.
