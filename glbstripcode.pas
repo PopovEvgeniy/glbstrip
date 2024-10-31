@@ -101,7 +101,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='GLB Strip';
- Form1.Caption:='GLB Strip 0.4.3';
+ Form1.Caption:='GLB Strip 0.4.4';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;

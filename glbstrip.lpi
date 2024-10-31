@@ -78,14 +78,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="85"/>
-        <CursorPos X="36" Y="142"/>
+        <TopLine Value="94"/>
+        <CursorPos X="33" Y="104"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="3" HistoryIndex="2">
+    <JumpHistory Count="4" HistoryIndex="3">
       <Position1>
         <Filename Value="glbstripcode.pas"/>
         <Caret Line="73" Column="31" TopLine="64"/>
@@ -98,6 +98,10 @@
         <Filename Value="glbstripcode.pas"/>
         <Caret Line="75" Column="31" TopLine="66"/>
       </Position3>
+      <Position4>
+        <Filename Value="glbstripcode.pas"/>
+        <Caret Line="142" Column="36" TopLine="85"/>
+      </Position4>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
