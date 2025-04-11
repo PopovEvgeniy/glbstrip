@@ -1,14 +1,14 @@
-object Form1: TForm1
+object MainWindow: TMainWindow
   Left = 254
   Height = 223
   Top = 155
   Width = 331
-  Caption = 'Form1'
+  Caption = 'GLB Strip'
   ClientHeight = 223
   ClientWidth = 331
-  LCLVersion = '4.0.0.1'
+  LCLVersion = '4.0.0.3'
   OnCreate = FormCreate
-  object LabeledEdit1: TLabeledEdit
+  object FileField: TLabeledEdit
     Left = 80
     Height = 23
     Top = 24
@@ -18,10 +18,10 @@ object Form1: TForm1
     EditLabel.Caption = 'File'
     EditLabel.ParentColor = False
     TabOrder = 0
-    Text = 'LabeledEdit1'
-    OnChange = LabeledEdit1Change
+    Text = 'FileField'
+    OnChange = FileFieldChange
   end
-  object LabeledEdit2: TLabeledEdit
+  object DirectoryField: TLabeledEdit
     Left = 80
     Height = 23
     Top = 72
@@ -31,45 +31,45 @@ object Form1: TForm1
     EditLabel.Caption = 'Directory'
     EditLabel.ParentColor = False
     TabOrder = 1
-    Text = 'LabeledEdit2'
-    OnChange = LabeledEdit2Change
+    Text = 'DirectoryField'
+    OnChange = DirectoryFieldChange
   end
-  object Button1: TButton
+  object OpenButton: TButton
     Left = 232
     Height = 25
     Top = 24
     Width = 88
     Caption = 'Open'
     TabOrder = 2
-    OnClick = Button1Click
+    OnClick = OpenButtonClick
   end
-  object Button2: TButton
+  object SelectButton: TButton
     Left = 232
     Height = 25
     Top = 72
     Width = 88
     Caption = 'Select'
     TabOrder = 3
-    OnClick = Button2Click
+    OnClick = SelectButtonClick
   end
-  object Button3: TButton
+  object ExtractButton: TButton
     Left = 88
     Height = 25
     Top = 168
     Width = 112
     Caption = 'Extract'
     TabOrder = 4
-    OnClick = Button3Click
+    OnClick = ExtractButtonClick
   end
-  object Label1: TLabel
+  object ToolPanel: TLabel
     Left = 16
     Height = 15
     Top = 120
-    Width = 22
+    Width = 23
     Caption = 'Tool'
     ParentColor = False
   end
-  object RadioButton1: TRadioButton
+  object DemonatorRadioButton: TRadioButton
     Left = 56
     Height = 19
     Top = 120
@@ -77,20 +77,20 @@ object Form1: TForm1
     Caption = 'Demonator'
     TabOrder = 5
   end
-  object RadioButton2: TRadioButton
+  object GalactixFuseRadioButton: TRadioButton
     Left = 176
     Height = 19
     Top = 120
-    Width = 85
+    Width = 84
     Caption = 'Galactix fuse'
     TabOrder = 6
   end
-  object OpenDialog1: TOpenDialog
+  object OpenDialog: TOpenDialog
     Left = 32
     Top = 160
   end
-  object SelectDirectoryDialog1: TSelectDirectoryDialog
-    Left = 256
-    Top = 152
+  object SelectDirectoryDialog: TSelectDirectoryDialog
+    Left = 232
+    Top = 168
   end
 end

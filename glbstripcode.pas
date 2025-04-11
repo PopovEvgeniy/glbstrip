@@ -10,32 +10,32 @@ uses
 
 type
 
-  { TForm1 }
+  { TMainWindow }
 
-  TForm1 = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Label1: TLabel;
-    LabeledEdit1: TLabeledEdit;
-    LabeledEdit2: TLabeledEdit;
-    OpenDialog1: TOpenDialog;
-    RadioButton1: TRadioButton;
-    RadioButton2: TRadioButton;
-    SelectDirectoryDialog1: TSelectDirectoryDialog;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
+  TMainWindow = class(TForm)
+    OpenButton: TButton;
+    SelectButton: TButton;
+    ExtractButton: TButton;
+    ToolPanel: TLabel;
+    FileField: TLabeledEdit;
+    DirectoryField: TLabeledEdit;
+    OpenDialog: TOpenDialog;
+    DemonatorRadioButton: TRadioButton;
+    GalactixFuseRadioButton: TRadioButton;
+    SelectDirectoryDialog: TSelectDirectoryDialog;
+    procedure OpenButtonClick(Sender: TObject);
+    procedure SelectButtonClick(Sender: TObject);
+    procedure ExtractButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure LabeledEdit1Change(Sender: TObject);
-    procedure LabeledEdit2Change(Sender: TObject);
+    procedure FileFieldChange(Sender: TObject);
+    procedure DirectoryFieldChange(Sender: TObject);
   private
     { private declarations }
   public
     { public declarations }
   end; 
 
-var Form1: TForm1;
+var MainWindow: TMainWindow;
 
 implementation
 
@@ -72,25 +72,25 @@ begin
  execute_program:=code;
 end;
 
-function get_backend():string;
+function get_backend(const is_galactix:boolean):string;
 var backend:string;
 begin
  backend:=ExtractFilePath(Application.ExeName)+'demonator.exe';
- if Form1.RadioButton2.Checked=True then
+ if is_galactix=True then
  begin
   backend:=ExtractFilePath(Application.ExeName)+'galactixfuse.exe';
  end;
  get_backend:=backend;
 end;
 
-procedure decompile_glb(const target:string;const directory:string);
+procedure decompile_glb(const is_galactix:boolean;const target:string;const directory:string);
 var argument,message:string;
 var messages:array[0..5] of string=('Operation was successfully complete','Cant open the input file','Cant create the output file','Cant jump to the target offset','Cant allocate memory','Invalid format');
 var status:Integer;
 begin
  message:='Can not execute an external program';
  argument:=convert_file_name(target)+' '+convert_file_name(directory);
- status:=execute_program(get_backend(),argument);
+ status:=execute_program(get_backend(is_galactix),argument);
  if status<>-1 then
  begin
   message:=messages[status];
@@ -101,46 +101,46 @@ end;
 procedure window_setup();
 begin
  Application.Title:='GLB Strip';
- Form1.Caption:='GLB Strip 0.4.4';
- Form1.BorderStyle:=bsDialog;
- Form1.Font.Name:=Screen.MenuFont.Name;
- Form1.Font.Size:=14;
+ MainWindow.Caption:='GLB Strip 0.4.6';
+ MainWindow.BorderStyle:=bsDialog;
+ MainWindow.Font.Name:=Screen.MenuFont.Name;
+ MainWindow.Font.Size:=14;
 end;
 
 procedure dialog_setup();
 begin
- Form1.OpenDialog1.FileName:='*.glb';
- Form1.OpenDialog1.DefaultExt:='*.glb';
- Form1.OpenDialog1.Filter:='GLB pseudo-archive|*.glb';
+ MainWindow.OpenDialog.FileName:='*.glb';
+ MainWindow.OpenDialog.DefaultExt:='*.glb';
+ MainWindow.OpenDialog.Filter:='GLB pseudo-archive|*.glb';
 end;
 
 procedure interface_setup();
 begin
- Form1.Button1.ShowHint:=False;
- Form1.Button2.ShowHint:=Form1.Button1.ShowHint;
- Form1.Button3.ShowHint:=Form1.Button1.ShowHint;
- Form1.Button3.Enabled:=False;
- Form1.RadioButton1.Checked:=True;
- Form1.LabeledEdit1.Text:='';
- Form1.LabeledEdit2.Text:=Form1.LabeledEdit1.Text;
- Form1.LabeledEdit1.LabelPosition:=lpLeft;
- Form1.LabeledEdit2.LabelPosition:=Form1.LabeledEdit1.LabelPosition;
- Form1.LabeledEdit1.Enabled:=False;
- Form1.LabeledEdit2.Enabled:=Form1.LabeledEdit1.Enabled;
+ MainWindow.OpenButton.ShowHint:=False;
+ MainWindow.SelectButton.ShowHint:=MainWindow.OpenButton.ShowHint;
+ MainWindow.ExtractButton.ShowHint:=MainWindow.OpenButton.ShowHint;
+ MainWindow.ExtractButton.Enabled:=False;
+ MainWindow.DemonatorRadioButton.Checked:=True;
+ MainWindow.FileField.Text:='';
+ MainWindow.DirectoryField.Text:=MainWindow.FileField.Text;
+ MainWindow.FileField.LabelPosition:=lpLeft;
+ MainWindow.DirectoryField.LabelPosition:=MainWindow.FileField.LabelPosition;
+ MainWindow.FileField.Enabled:=False;
+ MainWindow.DirectoryField.Enabled:=MainWindow.FileField.Enabled;
 end;
 
 procedure language_setup();
 begin
- Form1.LabeledEdit1.EditLabel.Caption:='File';
- Form1.LabeledEdit2.EditLabel.Caption:='Directory';
- Form1.Label1.Caption:='Tool';
- Form1.RadioButton1.Caption:='Demonator';
- Form1.RadioButton2.Caption:='Galactix fuse';
- Form1.Button1.Caption:='Open';
- Form1.Button2.Caption:='Browse';
- Form1.Button3.Caption:='Extract';
- Form1.OpenDialog1.Title:='Open the existing file';
- Form1.SelectDirectoryDialog1.Title:='Select a directory';
+ MainWindow.FileField.EditLabel.Caption:='File';
+ MainWindow.DirectoryField.EditLabel.Caption:='Directory';
+ MainWindow.ToolPanel.Caption:='Tool';
+ MainWindow.DemonatorRadioButton.Caption:='Demonator';
+ MainWindow.GalactixFuseRadioButton.Caption:='Galactix fuse';
+ MainWindow.OpenButton.Caption:='Open';
+ MainWindow.SelectButton.Caption:='Browse';
+ MainWindow.ExtractButton.Caption:='Extract';
+ MainWindow.OpenDialog.Title:='Open the existing file';
+ MainWindow.SelectDirectoryDialog.Title:='Select a directory';
 end;
 
 procedure setup();
@@ -151,45 +151,45 @@ begin
  language_setup();
 end;
 
-{ TForm1 }
+{ TMainWindow }
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TMainWindow.FormCreate(Sender: TObject);
 begin
  setup();
 end;
 
-procedure TForm1.LabeledEdit1Change(Sender: TObject);
+procedure TMainWindow.FileFieldChange(Sender: TObject);
 begin
- Form1.Button3.Enabled:=(Form1.LabeledEdit1.Text<>'') and (Form1.LabeledEdit2.Text<>'');
+ MainWindow.ExtractButton.Enabled:=(MainWindow.FileField.Text<>'') and (MainWindow.DirectoryField.Text<>'');
 end;
 
-procedure TForm1.LabeledEdit2Change(Sender: TObject);
+procedure TMainWindow.DirectoryFieldChange(Sender: TObject);
 begin
- Form1.Button3.Enabled:=(Form1.LabeledEdit1.Text<>'') and (Form1.LabeledEdit2.Text<>'');
+ MainWindow.ExtractButton.Enabled:=(MainWindow.FileField.Text<>'') and (MainWindow.DirectoryField.Text<>'');
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TMainWindow.OpenButtonClick(Sender: TObject);
 begin
- if Form1.OpenDialog1.Execute()=True then
+ if MainWindow.OpenDialog.Execute()=True then
  begin
-  Form1.LabeledEdit1.Text:=Form1.OpenDialog1.FileName;
-  Form1.LabeledEdit2.Text:=ExtractFilePath(Form1.OpenDialog1.FileName);
+  MainWindow.FileField.Text:=MainWindow.OpenDialog.FileName;
+  MainWindow.DirectoryField.Text:=ExtractFilePath(MainWindow.OpenDialog.FileName);
  end;
 
 end;
 
-procedure TForm1.Button2Click(Sender: TObject);
+procedure TMainWindow.SelectButtonClick(Sender: TObject);
 begin
- if Form1.SelectDirectoryDialog1.Execute()=True then
+ if MainWindow.SelectDirectoryDialog.Execute()=True then
  begin
-  Form1.LabeledEdit2.Text:=correct_path(Form1.SelectDirectoryDialog1.FileName);
+  MainWindow.DirectoryField.Text:=correct_path(MainWindow.SelectDirectoryDialog.FileName);
  end;
 
 end;
 
-procedure TForm1.Button3Click(Sender: TObject);
+procedure TMainWindow.ExtractButtonClick(Sender: TObject);
 begin
- decompile_glb(Form1.LabeledEdit1.Text,Form1.LabeledEdit2.Text);
+ decompile_glb(MainWindow.GalactixFuseRadioButton.Checked,MainWindow.FileField.Text,MainWindow.DirectoryField.Text);
 end;
 
 {$R *.lfm}
