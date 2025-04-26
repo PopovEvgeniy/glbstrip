@@ -1,6 +1,6 @@
                                    GLB Strip
 
-                                  Version 0.4.6
+                                  Version 0.4.7
 
                          This software was made by Popov Evgeniy Alekseyevich
 
@@ -48,4 +48,4 @@ Change log
 0.4.3.1-0.4.3.2: The documentation has been updated.
 0.4.4: The source code was recompiled under Lazarus 4.0 RC1.
 0.4.5: The source code was recompiled under Lazarus 4.0 RC3.
-0.4.6: The small changes.
+0.4.6-0.4.7: The small changes.
