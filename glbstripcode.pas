@@ -85,7 +85,7 @@ end;
 
 procedure decompile_glb(const is_galactix:boolean;const target:string;const directory:string);
 var argument,message:string;
-var messages:array[0..5] of string=('The operation was successfully complete','Cant open the input file','Cant create the output file','Cant jump to the target offset','Cant allocate memory','Invalid format');
+var messages:array[0..5] of string=('The operation was successfully complete','Cant open the input file','Cant create the output file','Cant jump to the target offset','Cant allocate memory','The invalid format');
 var status:Integer;
 begin
  message:='Can not execute an external program';
@@ -101,7 +101,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='GLB Strip';
- MainWindow.Caption:='GLB Strip 0.4.7';
+ MainWindow.Caption:='GLB Strip 0.4.8';
  MainWindow.BorderStyle:=bsDialog;
  MainWindow.Font.Name:=Screen.MenuFont.Name;
  MainWindow.Font.Size:=14;

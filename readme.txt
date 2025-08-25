@@ -1,6 +1,6 @@
                                    GLB Strip
 
-                                  Version 0.4.7.1
+                                  Version 0.4.8
 
                          This software was made by Popov Evgeniy Alekseyevich
 
@@ -21,7 +21,7 @@ This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 About program modification
 
 The code is included in the source.zip archive.
-It can be compiled under Lazarus 4.0 RC3 or higher.
+It can be compiled under Lazarus 4.2 or higher.
 
 Change log
 
@@ -46,3 +46,4 @@ Change log
 0.4.5: The source code was recompiled under Lazarus 4.0 RC3.
 0.4.6-0.4.7: The small changes.
 0.4.7.1: The documentation has been updated.
+0.4.8: The small changes.
