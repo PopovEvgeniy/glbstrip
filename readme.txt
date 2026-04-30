@@ -1,6 +1,6 @@
                                    GLB Strip
 
-                                  Version 0.4.8.1
+                                  Version 0.4.9
 
                          This software was made by Popov Evgeniy Alekseyevich
 
@@ -21,7 +21,7 @@ This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 The source code.
 
 The code is included in the source.zip archive.
-It can be compiled under Lazarus 4.2 or higher.
+It can be compiled under Lazarus 4.6 or higher.
 
 Version history.
 
@@ -48,3 +48,4 @@ Version history.
 0.4.7.1: The documentation has been updated.
 0.4.8: The small changes.
 0.4.8.1: The documentation has been updated.
+0.4.9: The program has been adapted to the new version of Demonator and Galactix fuse.
