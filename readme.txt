@@ -1,6 +1,6 @@
                                    GLB Strip
 
-                                  Version 0.4.9
+                                  Version 0.5
 
                          This software was made by Popov Evgeniy Alekseyevich
 
@@ -49,3 +49,4 @@ Version history.
 0.4.8: The small changes.
 0.4.8.1: The documentation has been updated.
 0.4.9: The program has been adapted to the new version of Demonator and Galactix fuse.
+0.5: The small changes.
