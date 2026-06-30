@@ -32,7 +32,6 @@ type
     procedure ExtractButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FileFieldChange(Sender: TObject);
-    procedure DirectoryFieldChange(Sender: TObject);
   private
     procedure window_setup();
     procedure dialog_setup();
@@ -50,7 +49,7 @@ implementation
 procedure TMainWindow.window_setup();
 begin
  Application.Title:='GLB Strip';
- Self.Caption:='GLB Strip 0.5';
+ Self.Caption:='GLB Strip 0.5.1';
  Self.BorderStyle:=bsDialog;
  Self.Font.Name:=Screen.MenuFont.Name;
  Self.Font.Size:=14;
@@ -69,6 +68,7 @@ begin
  Self.SelectButton.ShowHint:=False;
  Self.ExtractButton.ShowHint:=False;
  Self.ExtractButton.Enabled:=False;
+ Self.SelectButton.Enabled:=False;
  Self.DemonatorRadioButton.Checked:=True;
  Self.FileField.Text:='';
  Self.DirectoryField.Text:='';
@@ -146,10 +146,10 @@ end;
 
 procedure decompile_glb(const is_galactix:boolean;const target:string;const directory:string);
 var argument,message:string;
-var messages:array[0..7] of string=('The operation was successfully completed','Can not open the input file','Can not create the output file','Can not read data!','Can not write data!','Can not jump to the target offset','Can not allocate memory','The invalid format');
+var messages:array[0..7] of string=('The operation was successfully completed','Cannot open the input file','Cannot create the output file','Cannot read data!','Cannot write data!','Cannot jump to the target offset','Cannot allocate memory','The invalid format');
 var status:Integer;
 begin
- message:='Can not execute an external program';
+ message:='Cannot execute an external program';
  argument:=convert_file_name(target)+' '+convert_file_name(directory);
  status:=execute_program(get_backend(is_galactix),argument);
  if status<>-1 then
@@ -168,12 +168,8 @@ end;
 
 procedure TMainWindow.FileFieldChange(Sender: TObject);
 begin
- Self.ExtractButton.Enabled:=(Self.FileField.Text<>'') and (Self.DirectoryField.Text<>'');
-end;
-
-procedure TMainWindow.DirectoryFieldChange(Sender: TObject);
-begin
- Self.ExtractButton.Enabled:=(Self.FileField.Text<>'') and (Self.DirectoryField.Text<>'');
+ Self.ExtractButton.Enabled:=Self.FileField.Text<>'';
+ Self.SelectButton.Enabled:=Self.ExtractButton.Enabled;
 end;
 
 procedure TMainWindow.OpenButtonClick(Sender: TObject);
