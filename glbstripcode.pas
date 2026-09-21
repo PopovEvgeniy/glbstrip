@@ -49,7 +49,7 @@ implementation
 procedure TMainWindow.window_setup();
 begin
  Application.Title:='GLB Strip';
- Self.Caption:='GLB Strip 0.5.2';
+ Self.Caption:='GLB Strip 0.5.3';
  Self.BorderStyle:=bsDialog;
  Self.Font.Name:=Screen.MenuFont.Name;
  Self.Font.Size:=14;
@@ -146,7 +146,7 @@ end;
 
 procedure decompile_glb(const is_galactix:boolean;const target:string;const directory:string);
 var argument,message:string;
-var messages:array[0..7] of string=('The operation was successfully completed','Cannot open the input file','Cannot create the output file','Cannot read data!','Cannot write data!','Cannot jump to the target offset','Cannot allocate memory','The invalid format');
+var messages:array[0..8] of string=('The operation was successfully completed','The output path is empty','Cannot open the input file','Cannot create the output file','Cannot read data!','Cannot write data!','Cannot jump to the target offset','Cannot allocate memory','The invalid format');
 var status:Integer;
 begin
  message:='Cannot execute an external program';
